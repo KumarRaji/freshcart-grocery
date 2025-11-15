@@ -1,11 +1,15 @@
 import React from 'react';
 import { LeafIcon } from './icons/LeafIcon';
+import { FacebookIcon } from './icons/FacebookIcon';
+import { TwitterIcon } from './icons/TwitterIcon';
+import { InstagramIcon } from './icons/InstagramIcon';
+import { LinkedInIcon } from './icons/LinkedInIcon';
 
 export const Footer = ({ onNavigate }) => {
   return (
     <footer className="bg-neutral-dark text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div className="md:col-span-1">
             <button
               onClick={() => onNavigate('home')}
@@ -17,11 +21,49 @@ export const Footer = ({ onNavigate }) => {
             <p className="mt-4 text-gray-400 text-sm">
               Your daily dose of fresh, delivered right to your door.
             </p>
+            <div className="mt-4 flex space-x-4">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <FacebookIcon className="h-5 w-5" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Twitter"
+              >
+                <TwitterIcon className="h-5 w-5" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <InstagramIcon className="h-5 w-5" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon className="h-5 w-5" />
+              </a>
+            </div>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold">Shop</h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-2 space-y-1">
               <li>
                 <button
                   onClick={() => onNavigate('products')}
@@ -91,7 +133,7 @@ export const Footer = ({ onNavigate }) => {
 
           <div>
             <h3 className="text-lg font-semibold">About Us</h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-2 space-y-1">
               <li>
                 <a
                   href="#"
@@ -121,7 +163,7 @@ export const Footer = ({ onNavigate }) => {
 
           <div>
             <h3 className="text-lg font-semibold">Help</h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-2 space-y-1">
               <li>
                 <a
                   href="#"
@@ -150,7 +192,7 @@ export const Footer = ({ onNavigate }) => {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500 text-sm">
+        <div className="mt-6 border-t border-gray-700 pt-4 text-center text-gray-500 text-sm">
           &copy; {new Date().getFullYear()} FreshCart AI. All rights reserved.
         </div>
       </div>
