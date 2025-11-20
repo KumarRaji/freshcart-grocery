@@ -47,6 +47,7 @@ export const ShoppingCart = ({
   onClose,
   onUpdateQuantity,
   onRemove,
+  onProceedToCheckout,
 }) => {
   const subtotal = items.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -107,7 +108,16 @@ export const ShoppingCart = ({
                   ₹{subtotal.toFixed(2)}
                 </span>
               </div>
-              <Button className="w-full">Proceed to Checkout</Button>
+              <Button
+                className="w-full"
+                onClick={() => {
+                  if (typeof onProceedToCheckout === 'function') {
+                    onProceedToCheckout();
+                  }
+                }}
+              >
+                Proceed to Checkout
+              </Button>
             </div>
           )}
         </div>

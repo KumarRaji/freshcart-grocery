@@ -11,6 +11,7 @@ import { TodayOffersPage } from './pages/TodayOffersPage';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { CategoryPage } from './pages/CategoryPage';
+import { CheckoutPage } from './pages/CheckoutPage';
 
 // In JS we just treat page as a string; all valid values are the same as before.
 const App = () => {
@@ -110,6 +111,19 @@ const App = () => {
         return <LoginPage onLogin={handleLogin} onNavigate={navigateTo} />;
       case 'register':
         return <RegisterPage onRegister={handleRegister} onNavigate={navigateTo} />;
+      case 'checkout':
+        return (
+          <CheckoutPage
+            cartItems={cartItems}
+            onPlaceOrder={(order) => {
+              // simple place-order handler: clear cart and navigate home
+              setCartItems([]);
+              alert('Order placed successfully! Thank you.');
+              navigateTo('home');
+            }}
+            onNavigate={navigateTo}
+          />
+        );
       default:
         if (category) {
           return (
@@ -144,6 +158,10 @@ const App = () => {
         onClose={() => setIsCartOpen(false)}
         onUpdateQuantity={handleUpdateQuantity}
         onRemove={handleRemoveFromCart}
+        onProceedToCheckout={() => {
+          setIsCartOpen(false);
+          navigateTo('checkout');
+        }}
       />
     </div>
   );
