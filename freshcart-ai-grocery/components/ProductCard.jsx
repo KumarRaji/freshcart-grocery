@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookmarkIcon } from './icons/BookmarkIcon';
+import { WishlistIcon } from './icons/WishlistIcon';
 import { ClockIcon } from './icons/ClockIcon';
 import { ChevronDownIcon } from './icons/ChevronDownIcon';
 
@@ -73,7 +73,7 @@ export const ProductCard = ({ product, onAddToCart }) => {
               className="p-3 border border-gray-300 rounded-md text-gray-500 hover:bg-gray-100 hover:border-gray-400 transition-colors"
               aria-label="Save for later"
             >
-              <BookmarkIcon className="h-5 w-5" />
+              <WishlistIcon className="h-5 w-5" />
             </button>
             <button
               onClick={() => onAddToCart(product)}
